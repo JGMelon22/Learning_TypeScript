@@ -1,8 +1,12 @@
 // Core data types
-const number1 = 5;
+let number1: number;
+number1 = 5; // Redundant
+
 const number2 = 2.5;
 const printResult = true;
-const resultPhrase = "Result is: "
+let resultPhrase = "Result is: "
+// Due to inference, an error will occur
+// resultPhrase = true; 
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
     const result = n1 + n2;

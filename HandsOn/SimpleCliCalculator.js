@@ -1,38 +1,34 @@
+"use strict";
+exports.__esModule = true;
 // CLI-Calculator
 // Used NPMs: readline-sync and @types/readline-sync
-/* 
+/*
 First Number
 Operator
 Second Number
 */
-import { question } from 'readline-sync';
-
-type Operator = '+' | '-' | '*' | '/'; // Op types must be one of this
-
-function main(): void {
-    const firstStr: string = question("Enter first number:\n");
-    const operator: string = question("Enter operator: \n");
-    const secondStr: string = question("Enter second number:\n");
-
+var readline_sync_1 = require("readline-sync");
+function main() {
+    var firstStr = (0, readline_sync_1.question)("Enter first number:\n");
+    var operator = (0, readline_sync_1.question)("Enter operator: \n");
+    var secondStr = (0, readline_sync_1.question)("Enter second number:\n");
     // Check if everything is valid at once
-    const validInput: boolean = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr);
-
+    var validInput = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr);
     // All good, converting string to number
     if (validInput) {
-
         // Converting string to number
-        const firstNum: number = parseFloat(firstStr);
-        const secondNum: number = parseFloat(secondStr);
-        const result = calculate(firstNum, operator as Operator, secondNum);
-        console.log(`Result: ${result.toFixed(2)}`);
-    } else {
+        var firstNum = parseFloat(firstStr);
+        var secondNum = parseFloat(secondStr);
+        var result = calculate(firstNum, operator, secondNum);
+        console.log("Result: ".concat(result.toFixed(2)));
+    }
+    else {
         console.log("\nInvalid input\n");
         main(); // Repeats till all inputs are valid
     }
 }
-
 // Math time
-function calculate(firstNum: number, operator: Operator, secondNum: number) {
+function calculate(firstNum, operator, secondNum) {
     switch (operator) {
         case '+':
             return firstNum + secondNum;
@@ -46,9 +42,8 @@ function calculate(firstNum: number, operator: Operator, secondNum: number) {
         // a default value is not necessary. 
     }
 }
-
 // Verifying is its a valid operator
-function isOperator(operator: string): boolean {
+function isOperator(operator) {
     switch (operator) {
         case '+':
         case '-':
@@ -59,12 +54,10 @@ function isOperator(operator: string): boolean {
             return false;
     }
 }
-
 // Verifying values are numbers
-function isNumber(str: string): boolean {
-    const maybeNum = parseInt(str);
-    const isNum: boolean = !isNaN(maybeNum);
+function isNumber(str) {
+    var maybeNum = parseInt(str);
+    var isNum = !isNaN(maybeNum);
     return isNum;
 }
-
 main();

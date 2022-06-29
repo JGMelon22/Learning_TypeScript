@@ -1,14 +1,14 @@
 "use strict";
-exports.__esModule = true;
 // TODO - List
 // Using in memory items
+exports.__esModule = true;
 var uuid_1 = require("uuid");
 var list = document.querySelector("#list");
 var form = document.getElementById("new-task-form");
 var input = document.querySelector("#new-task-title");
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", function (e) {
     e.preventDefault();
-    if ((input === null || input === void 0 ? void 0 : input.value) === "" || (input === null || input === void 0 ? void 0 : input.value) === null)
+    if ((input === null || input === void 0 ? void 0 : input.value) == "" || (input === null || input === void 0 ? void 0 : input.value) == null)
         return; //  "?" optional chaining
     // If passes validation, creates a list
     var newTask = {
@@ -28,4 +28,3 @@ function addListItem(task) {
     item.append(label);
     list === null || list === void 0 ? void 0 : list.append(item);
 }
-// querySelector<HTMLFormElement>("#list")

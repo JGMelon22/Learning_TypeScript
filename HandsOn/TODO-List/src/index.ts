@@ -1,6 +1,8 @@
 // TODO - List
 // Using in memory items
-import { v4 as uuidV4 } from "uuid";
+
+import { v4 as uuidV4 } from "uuid"
+
 
 type Task = {
     id: string,
@@ -9,14 +11,15 @@ type Task = {
     createdAt: Date
 }
 
-const list = document.querySelector<HTMLUListElement>("#list");
-const form = document.getElementById("new-task-form") as HTMLFormElement | null;
-const input = document.querySelector<HTMLInputElement>("#new-task-title");
+const list = document.querySelector<HTMLUListElement>("#list")
+const form = document.getElementById("new-task-form") as HTMLFormElement | null
+const input = document.querySelector<HTMLInputElement>("#new-task-title")
 
 form?.addEventListener("submit", e => {
+
     e.preventDefault()
 
-    if (input?.value === "" || input?.value === null) return //  "?" optional chaining
+    if (input?.value == "" || input?.value == null) return //  "?" optional chaining
 
     // If passes validation, creates a list
     const newTask: Task = {
@@ -28,6 +31,8 @@ form?.addEventListener("submit", e => {
 
     addListItem(newTask);
 
+
+
 });
 
 function addListItem(task: Task) {
@@ -35,9 +40,7 @@ function addListItem(task: Task) {
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-
     label.append(checkbox, task.title);
     item.append(label);
     list?.append(item);
 }
-// querySelector<HTMLFormElement>("#list")

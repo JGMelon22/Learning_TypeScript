@@ -1,0 +1,29 @@
+body {
+    background-color: #282a36;
+    transform: scale(1.55);
+    transform-origin: 0 0;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    color: #8be9fd;
+    font-weight: bold;
+}
+
+button {
+    background-color: cadetblue;
+    padding: 0.25%;
+    border-radius: 2px;
+    width: 2cm;
+    border: aqua;
+    font-weight: 400;
+    color: #f8f8f2;
+    margin-left: 0.25cm;
+    cursor: pointer;
+}
+
+#list {
+    list-style: none;
+    padding: 0;
+}
